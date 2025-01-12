@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head th:insert="~{layout :: htmlhead}"></head>
+
+<body>
+    <main class="container">
+        <div class="sidebar">
+            <section>
+                <div class="topbar">
+                    <h2 class="tituloprojeto">LLM WebUi</h2>
+                </div>
+            </section>
+            <section class="content">
+                <div class="titulo">
+                    <div class="title"><h2>Modelos</h2></div>
+                    
+                    <div class="botaoadd">
+                        <button type="button" class="btn btn-primary">+</button>
+                    </div>
+                </div>
+
+                <article class="previaconversa">
+                    <img class="sideicon" th:src="${'/icons/llava.png'}" alt="">
+                    <h3 class="nome">LLaVA</h3>
+                </article>
+                <article class="previaconversa">
+                    <img class="sideicon" th:src="${'/icons/llama.webp'}" alt="">
+                    <h3 class="nome">Llama</h3>
+                </article>
+                <article class="previaconversa">
+                    <img class="sideicon" th:src="${'/icons/ms.jpeg'}" alt="">
+                    <h3 class="nome">Phi 4</h3>
+                </article>
+            </section>
+        </div>
+        <div class="conversa">
+            <div class="topbar">
+                <h2>LLaVA</h2>
+            </div>
+            <div class="linha">
+                <div class="bolha">
+                    <p>primeira mensagem eu</p>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="bolha">
+                    <p>segunda mensagem ai</p>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="bolha">
+                    <p>terceira mensagem AI</p>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="bolha">
+                    <p>quarta mensagem eu</p>
+                </div>
+            </div>
+            <div class="campo">
+                <input field="texto" id="txttexto" type="text" placeholder="Digite sua mensagem" required>
+                <button class="enviar" type="submit"><i class="far fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+
+    </main>
+</body>
+
+</html>

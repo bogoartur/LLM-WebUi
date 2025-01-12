@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Main<llm-webui>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "llmwebui.Main",
+            "projectName": "llm-webui",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
