@@ -1,12 +1,22 @@
 import { func } from "prop-types";
 import { useState } from "react";
+import envioService from "./main/resources/static/scripts/envioService.js";
 
 function CampoInput() {
-  const [mensagem, setMensagem] = useState("");
+  const [texto, setMensagem] = useState("");
 
-  const funcEnvioMensagem = () => {
-    console.log("Deu certo", mensagem);
-    setMensagem("");
+  const funcEnvioMensagem = (e) => {
+    e.preventDefault();
+    console.log("Deu certo", texto);
+    envioService
+      .enviarMensagem({ conteudo: texto })
+      .then((res) => {
+        console.log("Mensagem Enviada");
+        setMensagem("");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -16,7 +26,7 @@ function CampoInput() {
         id="txttexto"
         type="text"
         placeholder="Digite sua mensagem"
-        value={mensagem}
+        value={texto}
         onChange={(e) => setMensagem(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === "Enter") {

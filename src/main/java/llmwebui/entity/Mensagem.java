@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 
 @Entity
 public class Mensagem {
@@ -25,6 +26,11 @@ public class Mensagem {
     @Column(nullable = false)
     private String conteudo;
 
+    @Override
+    public String toString() {
+        return conteudo;
+    }
+
     public String getConteudo() {
         return conteudo;
     }
@@ -36,6 +42,7 @@ public class Mensagem {
     @Column(name = "enviada_em", nullable = false)
     private LocalDateTime enviadoEm;
 
+    @PrePersist
     public void prePersist() {
         if (enviadoEm == null) {
             enviadoEm = LocalDateTime.now();
