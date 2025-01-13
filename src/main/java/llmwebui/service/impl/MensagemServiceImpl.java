@@ -2,30 +2,35 @@ package llmwebui.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import llmwebui.entity.Mensagem;
+import llmwebui.repository.MensagemRepository;
 import llmwebui.service.MensagemService;
 
 @Service
-public class MensagemServiceImpl implements MensagemService{
+public class MensagemServiceImpl implements MensagemService {
+    @Autowired
+    private MensagemRepository repository;
 
     @Override
     public List<Mensagem> getAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAll'");
+        return repository.findAll();
     }
 
     @Override
     public Mensagem save(Mensagem mensagem) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        return repository.save(mensagem);
     }
 
     @Override
     public Mensagem getById(long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getById'");
+        var retorno = repository.findById(id);
+        if (retorno.isPresent()) {
+            return retorno.get();
+        }
+        return null;
     }
-    
+
 }

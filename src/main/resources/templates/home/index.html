@@ -1,72 +1,94 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/webjars/jquery-ui/1.13.2/jquery-ui.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<head th:insert="~{layout :: htmlhead}"></head>
-
-<body>
+  <body>
     <main class="container">
-        <div class="sidebar">
-            <section>
-                <div class="topbar">
-                    <h2 class="tituloprojeto">LLM WebUi</h2>
-                </div>
-            </section>
-            <section class="content">
-                <div class="titulo">
-                    <div class="title"><h2>Modelos</h2></div>
-                    
-                    <div class="botaoadd">
-                        <button type="button" class="btn btn-primary">+</button>
-                    </div>
-                </div>
+      <div class="sidebar">
+        <section>
+          <div class="topbar">
+            <h2 class="tituloprojeto">LLM WebUi</h2>
+          </div>
+        </section>
+        <section class="content">
+          <div class="titulo">
+            <div class="title"><h2>Modelos</h2></div>
 
-                <article class="previaconversa">
-                    <img class="sideicon" th:src="${'/icons/llava.png'}" alt="">
-                    <h3 class="nome">LLaVA</h3>
-                </article>
-                <article class="previaconversa">
-                    <img class="sideicon" th:src="${'/icons/llama.webp'}" alt="">
-                    <h3 class="nome">Llama</h3>
-                </article>
-                <article class="previaconversa">
-                    <img class="sideicon" th:src="${'/icons/ms.jpeg'}" alt="">
-                    <h3 class="nome">Phi 4</h3>
-                </article>
-            </section>
+            <div class="botaoadd">
+              <button type="button" class="btn btn-primary">+</button>
+            </div>
+          </div>
+
+          <article class="previaconversa">
+            <img class="sideicon" th:src="${'/icons/llava.png'}" alt="" />
+            <h3 class="nome">LLaVA</h3>
+          </article>
+          <article class="previaconversa">
+            <img class="sideicon" th:src="${'/icons/llama.webp'}" alt="" />
+            <h3 class="nome">Llama</h3>
+          </article>
+          <article class="previaconversa">
+            <img class="sideicon" th:src="${'/icons/ms.jpeg'}" alt="" />
+            <h3 class="nome">Phi 4</h3>
+          </article>
+        </section>
+      </div>
+      <div class="conversa">
+        <div class="topbar">
+          <h2>LLaVA</h2>
         </div>
-        <div class="conversa">
-            <div class="topbar">
-                <h2>LLaVA</h2>
-            </div>
-            <div class="linha">
-                <div class="bolha">
-                    <p>primeira mensagem eu</p>
-                </div>
-            </div>
-            <div class="linha">
-                <div class="bolha">
-                    <p>segunda mensagem ai</p>
-                </div>
-            </div>
-            <div class="linha">
-                <div class="bolha">
-                    <p>terceira mensagem AI</p>
-                </div>
-            </div>
-            <div class="linha">
-                <div class="bolha">
-                    <p>quarta mensagem eu</p>
-                </div>
-            </div>
-            <div class="campo">
-                <input field="texto" id="txttexto" type="text" placeholder="Digite sua mensagem" required>
-                <button class="enviar" type="submit"><i class="bi bi-send"></i></button>
-            </div>
+        <div class="linha">
+          <div class="bolha">
+            <p>primeira mensagem eu</p>
+          </div>
         </div>
-
-
+        <div class="linha">
+          <div class="bolha">
+            <p>segunda mensagem ai</p>
+          </div>
+        </div>
+        <div class="linha">
+          <div class="bolha">
+            <p>terceira mensagem AI</p>
+          </div>
+        </div>
+        <div class="linha">
+          <div class="bolha">
+            <p>quarta mensagem eu</p>
+          </div>
+        </div>
+        <div class="campo">
+          <input
+            field="texto"
+            id="txttexto"
+            type="text"
+            placeholder="Digite sua mensagem"
+            required
+          />
+          <button class="enviar" type="submit">
+            <i class="bi bi-send"></i>
+          </button>
+        </div>
+      </div>
     </main>
     <script th:src="@{/scripts/index.js}"></script>
-</body>
-
+  </body>
 </html>
