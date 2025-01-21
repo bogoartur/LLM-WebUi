@@ -56,4 +56,15 @@ public class Mensagem {
     public void setEnviadoEm(LocalDateTime enviadoEm) {
         this.enviadoEm = enviadoEm;
     }
+
+    @Column(nullable = false)
+    private boolean remetente; // boolean pq se for mensagem do usuario, é true, se for do bot, é false
+
+    public boolean isRemetente() {
+        return remetente;
+    }
+
+    public void setRemetente(boolean remetente) {
+        this.remetente = remetente;
+    }
 }

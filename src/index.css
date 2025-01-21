@@ -12,10 +12,15 @@ body,
   background-color: #f5f5f5 !important;
 }
 
-/* Mensagem sim mensagem não vai pro lado direito */
-.linha:nth-of-type(2n) {
-  display: flex !important;
-  justify-content: flex-end !important;
+.linha.usuario {
+  /*substituir o linha nth of type por mensagens com classe identificando o remetente */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bolha.usuario {
+  /* apenas a bolha de mensagem do usuario fica com a cor verde */
+  background-color: #d3f7c8;
 }
 
 .bolha {

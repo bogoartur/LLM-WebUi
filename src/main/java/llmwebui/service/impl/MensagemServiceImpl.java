@@ -3,6 +3,7 @@ package llmwebui.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import llmwebui.entity.Mensagem;
@@ -16,7 +17,7 @@ public class MensagemServiceImpl implements MensagemService {
 
     @Override
     public List<Mensagem> getAll() {
-        return repository.findAll();
+        return repository.findAll(Sort.by(Sort.Direction.DESC, "enviadoEm"));
     }
 
     @Override
